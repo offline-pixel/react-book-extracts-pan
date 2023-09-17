@@ -1,0 +1,109 @@
+@import "./_scss/variables";
+@import "./_scss/fonts";
+@import "./_scss/spacing";
+@import "./_scss/position";
+@import "./_scss/width";
+
+@import "./_scss/tags";
+
+@import "./_scss/header";
+@import "./_scss/404";
+
+@import "./_scss/list-view";
+@import "./_scss/grid-view"; //
+@import "./_scss/light-theme"; // it's blank and remove asap
+@import "./_scss/dark-theme"; // Make it blank and remove asap
+@import "./_scss/loader";
+@import "./_scss/media-queries"; // It's also blank, can be removed
+
+
+// NOTE: DESIGNING SCSS FROM SCRATCH FOLLOWS A DEFINITE PURPOSE BUT IT IS SLOW AS WE GROW WITH APPLICATIONS.
+// HOWEVER, ONCE ACHIEVED, SCSS CAN PROVIDE YOU BETTER PERFORMANCE COMPARE TO css frameworks IN A VERY LESS NUMBER OF LINES
+// AS OF NOW, MY APPROACH WAS LIMITED TO BUSINESS USE CASE TO DELIVER WORK ON TIME
+// AND DOES NOT INCLUDE MORE ADVANCED UI/UX for branding purpose which do requires time and market research about the product
+// Hope THIS CODE WILL HELP IN JUDGING MY SKILLS and HELPING ME TO WORK ON CONCEPTS LIKE UNLEARN/LEARN with your organisation
+
+// I HAVE CREATED A README2.md FILE FOR ENTERPRISE LEVEL SCSS/REACT code structure
+// - Ranolia, Deepak
+
+// main.scss
+body {
+  background-color: map-get($light-theme, background-color);
+  color: map-get($light-theme, text-color);
+  margin: 0;
+  font-family: 'Barlow', sans-serif;
+  font-family: 'Poppins', sans-serif;
+  font-size: 12px;
+  user-select: none;
+  text-align: justify !important;
+}
+
+.round-circle {
+  border-radius: 100px;
+  height: 26px;
+  width: 26px;
+  line-height: 26px;
+  text-align: center;
+  display: inline-block;
+  // background-color: map-get($light-theme, background-color);
+  border: 1px solid map-get($light-theme, hover-color);
+  @include cool-box-shadow($light-theme);
+}
+.card-tag {
+  width: 34px;
+  height: 30px;
+  border-radius: 0px 11px 11px 0px;
+  line-height: 32px;
+
+  text-align: center;
+  display: inline-block;
+  background-color: map-get($light-theme, background-color);
+  border: 1px solid map-get($light-theme, hover-color);
+  @include cool-box-shadow($light-theme);
+  @media (prefers-color-scheme: dark) {
+    background-color: map-get($dark-theme, background-color);
+    border: 1px solid map-get($dark-theme, hover-color);
+    @include cool-box-shadow($dark-theme);
+  }
+}
+
+.main {
+  margin: 10px 20px 10px;
+  padding-top: 10px;
+}
+
+.sticky-header {
+  position: sticky;
+  top: 0;
+  z-index: 1; /* Add a higher z-index to make sure it's above the content */
+  /* Add any other styles you want for the header */
+}
+
+.footer {
+  text-align: center;
+}
+
+
+.biography-cell {
+  max-height: 140px;
+  overflow: scroll;
+  padding-bottom: 20px;
+  min-width: 200px;
+}
+
+
+.App {
+  opacity: 0; /* Start with opacity 0 */
+  animation: fadeIn 1s ease-in forwards; /* Apply the fadeIn animation */
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0; /* Start from opacity 0 */
+  }
+  to {
+    opacity: 1; /* End at opacity 1 */
+  }
+}
+
+
