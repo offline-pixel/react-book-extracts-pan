@@ -1,7 +1,8 @@
 a {
     color: map-get($light-theme, link-color);
     text-decoration: none;
-    transition: color 0.3s ease-in-out;
+    // transition: color 0.3s ease-in-out;
+    @include transition(color 0.3s ease-in-out);
     &:hover {
       color: map-get($light-theme, hover-link-color) !important;
       cursor: pointer;
@@ -32,5 +33,28 @@ img {
     min-width: 80px !important;
     img:hover {
         transform: scale(1.05);
+        // @include transform-translateY(-2px);
     }
+}
+/* ::-moz-selection for Firefox */
+::-moz-selection {
+    background: rgba(35, 35, 35, 0.1); /* Adjust the color and opacity as needed */
+}
+
+/* Scrollbar for WebKit browsers (Chrome, Safari) */
+::-webkit-scrollbar {
+    width: 7px;
+    height: 7px;
+}
+
+/* Scrollbar thumb */
+::-webkit-scrollbar-thumb {
+    background: rgba(35, 35, 35, 0.2); /* Adjust the color and opacity as needed */
+    border-radius: 10px;
+}
+
+/* Scrollbar track */
+::-webkit-scrollbar-track {
+    background: rgba(35, 35, 35, 0.1); /* Adjust the color and opacity as needed */
+    border-radius: 10px;
 }

@@ -86,7 +86,8 @@ body {
 
 .biography-cell {
   max-height: 140px;
-  overflow: scroll;
+  overflow: hidden;
+  overflow-y: auto;
   padding-bottom: 20px;
   min-width: 200px;
 }

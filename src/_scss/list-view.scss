@@ -42,13 +42,14 @@
     .sort-indicator {
       font-size: 12px;
       margin-left: 5px;
-      transition: transform 0.2s ease-in-out;
+      @include transition(all 0.3s ease-in-out);
     }
 
     &:hover {
       cursor: pointer;
       .sort-indicator {
-        transform: translateY(-2px);
+        // transform: translateY(-2px);
+        @include transform-translateY(-2px);
       }
     }
   }
@@ -67,7 +68,9 @@
     img {
       max-width: 100%;
       height: auto;
-      transition: transform 0.2s ease-in-out;
+      // transition: transform 0.2s ease-in-out;
+      @include transition(transform 0.3s ease-in-out);
+
     }
 
   }
@@ -92,7 +95,8 @@
     @media (prefers-color-scheme: dark) {
       background-color: map-get($dark-theme, hover-row-color);
     }
-    transition: background-color 0.3s ease-in-out;
+    // transition: background-color 0.3s ease-in-out;
+    @include transition(all 0.3s ease-in-out);
     td {
       img {
         transform: scale(1.05);

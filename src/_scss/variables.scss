@@ -38,6 +38,7 @@ $dark-theme: (
   text-yellow: #b5b509
 );
 
+@mixin transition($args...){ -webkit-transition:$args;-moz-transition:$args;-ms-transition:$args;-o-transition:$args;transition:$args; }
 
 @mixin cool-box-shadow($theme) {
   box-shadow: 0 4px 6px #{map-get($theme, shadow-color)};
@@ -48,6 +49,12 @@ $dark-theme: (
   }
 }
 
+// Mixin for transform property with translateY
+@mixin transform-translateY($value) {
+  -webkit-transform: translateY($value);
+  -moz-transform: translateY($value);
+  transform: translateY($value);
+}
 
 .text-green { color: map-get($light-theme, text-green); }
 .text-red { color: map-get($light-theme, text-red); }
