@@ -65,7 +65,7 @@ body {
     border: 1px solid map-get($dark-theme, hover-color);
     @include cool-box-shadow($dark-theme);
   }
-  z-index: 9;
+  // z-index: 9;
 }
 
 .main {
