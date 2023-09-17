@@ -16,7 +16,6 @@ export const bookExtractColumns = [
     Header: 'Cover',
     accessor: 'jacketUrl',
     Cell: ({ row }) => {
-      // console.log(row) // someone changed the value(row.original) is there but not row.original.isbn/jacketUrl now
       const { jacketUrl, isbn } = row.original;
 
       // Define a fallback image source - BAD PRACTICE
@@ -26,7 +25,6 @@ export const bookExtractColumns = [
       //   // this will be an infinite loop if fallback image will not be found
       //   e.target.src = fallbackImageSrc; // Set the fallback image source on error
       // };
-
       // Check if jacketUrl is undefined or empty
       if (!jacketUrl) {
         return (
@@ -74,24 +72,9 @@ export const bookExtractColumns = [
     Header: 'Title',
     accessor: 'title',
     Cell: ({ row }) => {
-      // console.log(row) // someone changed the value(row.original) is there but not row.original.isbn/title now
-      if (row.original.title === undefined) {
-        // return (
-        //   <>
-        //     <td className="hide-title"></td> {/* Add class to <td> */}
-        //     <th className="hide-title"></th> {/* Add class to corresponding <th> */}
-        //   </>
-        // );
-        return <div className="outer-div">
-          <a href="#" target="_blank" rel="noopener noreferrer">
-            {/* Title Unavailable */}
-          </a>
-        </div>
-      }
-  
       return (
       <div className="outer-div">
-          <a href={`https://extracts.panmacmillan.com/extract?isbn=${row.original.isbn}`} target="_blank" rel="noopener noreferrer">
+          <a className='txt-left' href={`https://extracts.panmacmillan.com/extract?isbn=${row.original.isbn}`} target="_blank" rel="noopener noreferrer">
             {row.original.title}
           </a>
         </div>
@@ -116,7 +99,7 @@ export const bookExtractColumns = [
       return (
         <div className="outer-div">
           <span className="list-view-hidden">Reading Time: </span>
-          <i className={iconClass}>{value} minutes</i>
+          <i className={`Orbitron ${iconClass}`}>{value}</i>
         </div>
       );
     },

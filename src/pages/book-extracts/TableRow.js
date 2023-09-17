@@ -15,6 +15,7 @@ const TableRow = ({ row, rowIndex, columns, expandedRows, toggleRowExpansion }) 
             value={row[column.accessor]}
             isExpanded={isExpanded} // Pass the expansion status to the cell
             handleToggleRowExpansion={() => toggleRowExpansion(rowIndex)} // Toggle the expansion for this row
+            column={column}
           />
         </td>
       );
@@ -33,6 +34,7 @@ const TableRow = ({ row, rowIndex, columns, expandedRows, toggleRowExpansion }) 
           <DefaultCell
             value={row[column.accessor]}
             column={column}
+            row={row}
           />
         </td>
       );

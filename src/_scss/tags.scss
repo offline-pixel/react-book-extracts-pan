@@ -1,6 +1,8 @@
 a {
     color: map-get($light-theme, link-color);
     text-decoration: none;
+    display: block;
+    text-align: center;
     // transition: color 0.3s ease-in-out;
     @include transition(color 0.3s ease-in-out);
     &:hover {
